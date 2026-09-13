@@ -1,0 +1,110 @@
+window.PORTFOLIO_PROJECTS = [
+  {
+    id: 'sunscreen',
+    title: 'Sunscreen UGC',
+    originalFilename: 'Sunscreen.mp4',
+    category: 'UGC',
+    subcategory: 'Skincare UGC',
+    duration: '0:24',
+    preview: 'assets/videos/previews/sunscreen.mp4',
+    video: 'assets/videos/full/sunscreen.mp4',
+    thumbnail: 'assets/thumbnails/sunscreen.jpg',
+    description: 'Short-form skincare UGC built around a direct hook, clean captions, supporting B-roll, and fast visual pacing.'
+  },
+  {
+    id: 'serum',
+    title: 'Serum UGC',
+    originalFilename: 'serum.mp4',
+    category: 'UGC',
+    subcategory: 'Skincare UGC',
+    duration: '0:33',
+    preview: 'assets/videos/previews/serum.mp4',
+    video: 'assets/videos/full/serum.mp4',
+    thumbnail: 'assets/thumbnails/serum.jpg',
+    description: 'Skincare UGC edit combining creator-led footage, product-focused B-roll, captions, and paced visual changes.'
+  },
+  {
+    id: 'nlp1-supplement',
+    title: 'NLP-1 Supplement UGC',
+    originalFilename: 'NLP-1 Supplement.mp4',
+    category: 'UGC',
+    subcategory: 'Supplement UGC',
+    duration: '0:36',
+    preview: 'assets/videos/previews/nlp1-supplement.mp4',
+    video: 'assets/videos/full/nlp1-supplement.mp4',
+    thumbnail: 'assets/thumbnails/nlp1-supplement.jpg',
+    description: 'Creator-style supplement UGC with structured captions, supporting visuals, and a steady direct-response rhythm.'
+  },
+  {
+    id: 'moisturizer',
+    title: 'Moisturizer UGC',
+    originalFilename: 'Moisturizer.mp4',
+    category: 'UGC',
+    subcategory: 'Skincare UGC',
+    duration: '0:26',
+    preview: 'assets/videos/previews/moisturizer.mp4',
+    video: 'assets/videos/full/moisturizer.mp4',
+    thumbnail: 'assets/thumbnails/moisturizer.jpg',
+    description: 'Skincare-focused UGC edit using creator footage, product presentation, captions, and concise pacing.'
+  },
+  {
+    id: 'gut-ease-supplement',
+    title: 'Gut Ease Supplement UGC',
+    originalFilename: 'Gut Ease Supplement.mp4',
+    category: 'UGC',
+    subcategory: 'Supplement UGC',
+    duration: '0:34',
+    preview: 'assets/videos/previews/gut-ease-supplement.mp4',
+    video: 'assets/videos/full/gut-ease-supplement.mp4',
+    thumbnail: 'assets/thumbnails/gut-ease-supplement.jpg',
+    description: 'Supplement UGC edit focused on clear creator delivery, readable captions, product visibility, and smooth pacing.'
+  },
+  {
+    id: 'clay-supplement',
+    title: 'Supplement Claymation',
+    originalFilename: 'Supplement.mp4',
+    category: 'Claymation',
+    subcategory: 'AI Claymation',
+    duration: '0:17',
+    preview: 'assets/videos/previews/clay-supplement.mp4',
+    video: 'assets/videos/full/clay-supplement.mp4',
+    thumbnail: 'assets/thumbnails/clay-supplement.jpg',
+    description: 'AI-assisted claymation-style product creative with stylized character animation and product integration.'
+  },
+  {
+    id: 'clay-protein',
+    title: 'Protein Claymation',
+    originalFilename: 'Protein.mp4',
+    category: 'Claymation',
+    subcategory: 'AI Claymation',
+    duration: '0:39',
+    preview: 'assets/videos/previews/clay-protein.mp4',
+    video: 'assets/videos/full/clay-protein.mp4',
+    thumbnail: 'assets/thumbnails/clay-protein.jpg',
+    description: 'Vertical claymation-inspired product video combining AI-generated character scenes with an ad-focused edit.'
+  },
+  {
+    id: 'dog-vsl',
+    title: 'Dog Care VSL',
+    originalFilename: 'dog vsl.mp4',
+    category: 'VSL',
+    subcategory: 'Direct Response VSL',
+    duration: '0:56',
+    preview: 'assets/videos/previews/dog-vsl.mp4',
+    video: 'assets/videos/full/dog-vsl.mp4',
+    thumbnail: 'assets/thumbnails/dog-vsl.jpg',
+    description: 'Direct-response VSL combining creator-style footage, pet-focused B-roll, captions, and rapid visual progression.'
+  },
+  {
+    id: 'scalp-care-vsl',
+    title: 'Scalp Care VSL',
+    originalFilename: 'VSL.mp4',
+    category: 'VSL',
+    subcategory: 'Direct Response VSL',
+    duration: '1:01',
+    preview: 'assets/videos/previews/scalp-care-vsl.mp4',
+    video: 'assets/videos/full/scalp-care-vsl.mp4',
+    thumbnail: 'assets/thumbnails/scalp-care-vsl.jpg',
+    description: 'Longer-form vertical VSL using presenter footage, explanatory visuals, captions, and anatomy-style supporting scenes.'
+  }
+];
