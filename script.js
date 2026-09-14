@@ -55,30 +55,28 @@
     activatePreviewObservers();
   }
 
-  let previewObserver;
   function activatePreviewObservers() {
-    if (previewObserver) previewObserver.disconnect();
-    const previews = [...document.querySelectorAll('.preview-video')];
-    if (!('IntersectionObserver' in window)) return;
-    previewObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-          if (!video.src) {
-            video.src = video.dataset.src;
-            video.load();
-          }
-          const playPromise = video.play();
-          if (playPromise && typeof playPromise.then === 'function') {
-            playPromise.then(() => video.classList.add('is-playing')).catch(() => {});
-          }
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: [0, 0.55, 1] });
-    previews.forEach(video => previewObserver.observe(video));
-  }
+  document.querySelectorAll('.preview-media').forEach(media => {
+    const video = media.querySelector('.preview-video');
+
+    media.addEventListener('mouseenter', () => {
+      if (!video.src) {
+        video.src = video.dataset.src;
+        video.load();
+      }
+
+      video.play()
+        .then(() => video.classList.add('is-playing'))
+        .catch(() => {});
+    });
+
+    media.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+      video.classList.remove('is-playing');
+    });
+  });
+}
 
   function openProject(id) {
     const project = projects.find(item => item.id === id);
