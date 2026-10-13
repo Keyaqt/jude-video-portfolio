@@ -193,7 +193,13 @@
     <div class="modal-panel video-panel">
       <button class="modal-close" type="button" data-close-video aria-label="Close video">×</button>
       <div class="modal-video-wrap">
-        <video id="modal-video" controls playsinline preload="metadata"></video>
+       <video
+  src="video.mp4"
+  controls
+  controlsList="nodownload"
+  disablePictureInPicture
+  oncontextmenu="return false;"
+></video>
       </div>
       <div class="modal-copy">
         <p id="video-modal-kicker" class="eyebrow"></p>
