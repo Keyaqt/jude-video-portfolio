@@ -58,22 +58,7 @@ window.PORTFOLIO_PROJECTS = [
     video: 'gut-ease-supplement.mp4',
     thumbnail: 'gut-ease-supplement.jpg',
     description: 'Supplement UGC edit focused on clear creator delivery, readable captions, product visibility, and smooth pacing.'
-  },
-
-{
-  id: 'polo-ugc',
-  title: 'Polo UGC',
-  originalFilename: 'Polo UGC.mp4',
-  category: 'UGC',
-  subcategory: 'Fashion UGC',
-  duration: '0:19',
-  preview: 'Polo UGC.mp4',
-  video: 'Polo UGC.mp4',
-  thumbnail: 'polo-ugc.jpg',
-  description: 'AI-generated fashion UGC advertisement featuring product storytelling, creator-style visuals, and professional video editing.'
-},
-
-  
+  },  
   {
     id: 'clay-supplement',
     title: 'Supplement Claymation',
