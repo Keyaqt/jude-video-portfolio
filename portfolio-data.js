@@ -69,7 +69,7 @@ window.PORTFOLIO_PROJECTS = [
   duration: '0:19',
   preview: 'Polo UGC.mp4',
   video: 'Polo UGC.mp4',
-thumbnail: 'polo-ugc.jpg',
+  thumbnail: 'polo-ugc.jpg',
   description: 'AI-generated fashion UGC advertisement featuring product storytelling, creator-style visuals, and professional video editing.'
 },
 
