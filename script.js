@@ -3,8 +3,51 @@
 
   const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
   const featuredIds = Array.isArray(window.FEATURED_PROJECT_IDS) ? window.FEATURED_PROJECT_IDS : [];
-  const featured = featuredIds.map(id => projects.find(project => project.id === id)).filter(Boolean);
 
+  // Additional portfolio project; existing projects remain untouched.
+  const dramaProject = {
+    id: 'ai-drama',
+    title: 'AI Drama — Cinematic Storytelling',
+    originalFilename: 'AI Drama.mp4',
+    category: 'AI Drama',
+    subcategory: 'AI Cinematic Storytelling',
+    duration: '1:16',
+    preview: 'previews/ai-drama-preview.mp4',
+    video: 'ai-drama.mp4',
+    thumbnail: 'ai-drama.jpg',
+    description: 'Cinematic family-drama sequence with emotional dialogue, character-driven scenes, dramatic pacing, and a narrative edit.'
+  };
+  if (!projects.some(project => project.id === dramaProject.id)) projects.unshift(dramaProject);
+  if (!featuredIds.includes('ai-drama')) featuredIds.unshift('ai-drama');
+
+  // Add a filter and service without requiring modifications to the existing HTML or CSS.
+  const filterBar = document.querySelector('.filter-bar');
+  if (filterBar && !filterBar.querySelector('[data-filter="AI Drama"]')) {
+    const button = document.createElement('button');
+    button.className = 'filter';
+    button.type = 'button';
+    button.dataset.filter = 'AI Drama';
+    button.textContent = 'AI Drama';
+    filterBar.appendChild(button);
+  }
+  const workTitle = document.querySelector('#work-title');
+  if (workTitle) workTitle.textContent = 'UGC, VSL, AI claymation, and cinematic drama.';
+  const featuredIntro = document.querySelector('#featured .section-intro');
+  if (featuredIntro) featuredIntro.textContent = 'Selected VSL and AI drama projects showing narrative progression, emotional pacing, and visual storytelling.';
+  const heroEyebrow = document.querySelector('.hero .eyebrow');
+  if (heroEyebrow) heroEyebrow.textContent = 'UGC · VSL · AI Drama · AI Creative Production';
+  const aboutIntro = document.querySelector('#about .section-intro');
+  if (aboutIntro) aboutIntro.textContent = 'I’m Jude Rebamonte, an AI Video Editor creating engaging UGC, VSL, and cinematic AI storytelling.';
+  const services = document.querySelector('.services-grid');
+  if (services && !services.querySelector('[data-service="ai-drama"]')) {
+    const service = document.createElement('article');
+    service.className = 'service-card';
+    service.dataset.service = 'ai-drama';
+    service.innerHTML = '<span>04</span><h3>AI Drama & Cinematic Storytelling</h3><p>Character-driven scenes, cinematic AI visuals, emotional storytelling, dialogue pacing, sound design, and polished narrative editing.</p>';
+    services.appendChild(service);
+  }
+
+  const featured = featuredIds.map(id => projects.find(project => project.id === id)).filter(Boolean);
   const portfolioGrid = document.querySelector('#portfolio-grid');
   const featuredGrid = document.querySelector('#featured-grid');
   const videoModal = document.querySelector('#video-modal');
@@ -13,9 +56,7 @@
   const modalKicker = document.querySelector('#video-modal-kicker');
   const modalDescription = document.querySelector('#video-modal-description');
   const aboutModal = document.querySelector('#about-modal');
-
   const escapeHTML = value => String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
-
   function mediaMarkup(project, featuredCard = false) {
     const cls = featuredCard ? 'featured-media preview-media' : 'project-media preview-media';
     return `
@@ -24,7 +65,6 @@
         <video class="preview-video" muted loop playsinline preload="none" data-src="${escapeHTML(project.preview)}" aria-hidden="true"></video>
       </div>`;
   }
-
   function renderFeatured() {
     if (!featuredGrid) return;
     featuredGrid.innerHTML = featured.map(project => `
@@ -40,7 +80,6 @@
         </div>
       </article>`).join('');
   }
-
   function renderPortfolio(filter = 'All') {
     if (!portfolioGrid) return;
     const filtered = filter === 'All' ? projects : projects.filter(project => project.category === filter);
@@ -54,30 +93,23 @@
       </article>`).join('');
     activatePreviewObservers();
   }
-
   function activatePreviewObservers() {
-  document.querySelectorAll('.preview-media').forEach(media => {
-    const video = media.querySelector('.preview-video');
-
-    media.addEventListener('mouseenter', () => {
-      if (!video.src) {
-        video.src = video.dataset.src;
-        video.load();
-      }
-
-      video.play()
-        .then(() => video.classList.add('is-playing'))
-        .catch(() => {});
+    document.querySelectorAll('.preview-media').forEach(media => {
+      const video = media.querySelector('.preview-video');
+      media.addEventListener('mouseenter', () => {
+        if (!video.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+        video.play().then(() => video.classList.add('is-playing')).catch(() => {});
+      });
+      media.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+        video.classList.remove('is-playing');
+      });
     });
-
-    media.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-      video.classList.remove('is-playing');
-    });
-  });
-}
-
+  }
   function openProject(id) {
     const project = projects.find(item => item.id === id);
     if (!project || !videoModal || !modalVideo) return;
@@ -90,7 +122,6 @@
     videoModal.showModal();
     modalVideo.play().catch(() => {});
   }
-
   function closeVideoModal() {
     if (!videoModal?.open) return;
     modalVideo.pause();
@@ -102,7 +133,6 @@
   renderFeatured();
   renderPortfolio();
   activatePreviewObservers();
-
   document.addEventListener('click', event => {
     const filter = event.target.closest('[data-filter]');
     if (filter) {
@@ -111,24 +141,20 @@
       renderPortfolio(filter.dataset.filter);
       return;
     }
-
     const playButton = event.target.closest('[data-play-project]');
     if (playButton) {
       openProject(playButton.dataset.playProject);
       return;
     }
-
     const media = event.target.closest('.preview-media');
     if (media) {
       openProject(media.dataset.projectId);
       return;
     }
-
     if (event.target.closest('[data-close-video]')) closeVideoModal();
     if (event.target.closest('[data-open-about]')) aboutModal?.showModal();
     if (event.target.closest('[data-close-about]')) aboutModal?.close();
   });
-
   document.addEventListener('keydown', event => {
     const media = event.target.closest?.('.preview-media');
     if (media && (event.key === 'Enter' || event.key === ' ')) {
@@ -136,7 +162,6 @@
       openProject(media.dataset.projectId);
     }
   });
-
   videoModal?.addEventListener('click', event => {
     if (event.target === videoModal) closeVideoModal();
   });
@@ -148,7 +173,6 @@
     modalVideo.removeAttribute('src');
     modalVideo.load();
   });
-
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.querySelector('#site-nav');
   navToggle?.addEventListener('click', () => {
@@ -162,7 +186,6 @@
       navToggle?.setAttribute('aria-expanded', 'false');
     }
   });
-
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 })();
