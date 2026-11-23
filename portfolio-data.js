@@ -84,6 +84,18 @@ window.PORTFOLIO_PROJECTS = [
     description: 'Fast-cut fitness UGC that opens on a pain-point hook, moves through athlete B-roll, and closes on an offer callout.'
   },
   {
+    id: 'online-income-ugc',
+    title: 'Online Income UGC',
+    originalFilename: 'UGC_.mp4',
+    category: 'UGC',
+    subcategory: 'Talking-Head UGC',
+    duration: '0:47',
+    preview: 'previews/online-income-ugc-preview.mp4',
+    video: 'online-income-ugc.mp4',
+    thumbnail: 'online-income-ugc.jpg',
+    description: 'Talking-head UGC with a sticky headline banner, keyword-highlighted captions, and lifestyle B-roll cutaways.'
+  },
+  {
     id: 'clay-supplement',
     title: 'Supplement Claymation',
     originalFilename: 'Supplement.mp4',
