@@ -58,7 +58,31 @@ window.PORTFOLIO_PROJECTS = [
     video: 'gut-ease-supplement.mp4',
     thumbnail: 'gut-ease-supplement.jpg',
     description: 'Supplement UGC edit focused on clear creator delivery, readable captions, product visibility, and smooth pacing.'
-  },  
+  },
+  {
+    id: 'polo-ugc',
+    title: 'Polo Shirt UGC',
+    originalFilename: 'POLO UGC.mp4',
+    category: 'UGC',
+    subcategory: 'Fashion UGC',
+    duration: '0:19',
+    preview: 'previews/polo-ugc.mp4',
+    video: 'polo-ugc.mp4',
+    thumbnail: 'polo-ugc.jpg',
+    description: 'Mirror-selfie fashion UGC with a creator walkthrough, close-up detail shots, and punchy word-by-word captions.'
+  },
+  {
+    id: 'recovery-sleeve-ugc',
+    title: 'Recovery Sleeve UGC',
+    originalFilename: '0707.mp4',
+    category: 'UGC',
+    subcategory: 'Fitness UGC',
+    duration: '0:12',
+    preview: 'previews/recovery-sleeve-ugc.mp4',
+    video: 'recovery-sleeve-ugc.mp4',
+    thumbnail: 'recovery-sleeve-ugc.jpg',
+    description: 'Fast-cut fitness UGC that opens on a pain-point hook, moves through athlete B-roll, and closes on an offer callout.'
+  },
   {
     id: 'clay-supplement',
     title: 'Supplement Claymation',
