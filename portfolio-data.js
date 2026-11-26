@@ -72,28 +72,28 @@ window.PORTFOLIO_PROJECTS = [
     description: 'Mirror-selfie fashion UGC with a creator walkthrough, close-up detail shots, and punchy word-by-word captions.'
   },
   {
-    id: 'recovery-sleeve-ugc',
-    title: 'Recovery Sleeve UGC',
-    originalFilename: '0707.mp4',
-    category: 'UGC',
-    subcategory: 'Fitness UGC',
-    duration: '0:12',
-    preview: 'previews/recovery-sleeve-ugc.mp4',
-    video: 'recovery-sleeve-ugc.mp4',
-    thumbnail: 'recovery-sleeve-ugc.jpg',
-    description: 'Fast-cut fitness UGC that opens on a pain-point hook, moves through athlete B-roll, and closes on an offer callout.'
-  },
-  {
     id: 'online-income-ugc',
     title: 'Online Income UGC',
     originalFilename: 'UGC_.mp4',
     category: 'UGC',
     subcategory: 'Talking-Head UGC',
     duration: '0:47',
-    preview: 'previews/online-income-ugc-preview.mp4',
+    preview: 'online-income-ugc-preview.mp4',
     video: 'online-income-ugc.mp4',
     thumbnail: 'online-income-ugc.jpg',
     description: 'Talking-head UGC with a sticky headline banner, keyword-highlighted captions, and lifestyle B-roll cutaways.'
+  },
+  {
+    id: 'penthouse-secret-drama',
+    title: 'Franky Shaw Inspo',
+    originalFilename: 'Franky_Shaw_Inspo.mp4',
+    category: 'AI Drama',
+    subcategory: 'AI Drama Ad Hook',
+    duration: '0:48',
+    preview: 'penthouse-secret-drama-preview.mp4',
+    video: 'penthouse-secret-drama.mp4',
+    thumbnail: 'penthouse-secret-drama.jpg',
+    description: 'Two-friend AI drama hook: a handheld walk-and-talk penthouse reveal that escalates room by room, with reaction close-ups and a cliffhanger secret.'
   },
   {
     id: 'clay-supplement',
